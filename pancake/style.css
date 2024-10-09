@@ -1,0 +1,96 @@
+body {
+  font-family: "Readex Pro","Karla",Arial, Helvetica, sans-serif;
+  background-color: #fff8f0;
+  color: #5a4a42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+  
+}
+
+.image-container {
+  position: relative;
+  flex: 2;
+  
+
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 80vw;
+  
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  
+  
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #fad7c2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 85vh;
+  margin-right: 20px;
+  
+  
+}
+
+.price-banner {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background-color: #d17b49;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.user-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+ 
+}
+
+.buttons{
+  padding: 5px 10px;
+  background-color: #f7955b;
+  border: none;
+  border-radius: 5px;
+  color: #fff8f0;
+  text-shadow:  3px 2px 5px rgb(117, 88, 41) ;
+  box-shadow: 2px 3px 5px rgb(117, 88, 41);
+}
+#submitName{
+  width: 80px;
+  margin-top: 10px;
+  
+  
+}
+#showOrder{
+  margin-top: 10px;
+}
+

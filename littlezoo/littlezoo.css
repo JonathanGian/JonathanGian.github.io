@@ -1,0 +1,134 @@
+* {
+	box-sizing: border-box;
+}
+
+.hidden {
+	display: none;
+}
+
+#container {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid #000000;
+}
+
+header {
+	text-align: center;
+	border-bottom: 2px solid #000000;
+}
+
+#sidebar {
+	width: 30px;
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	display: flex;
+}
+
+#toggleSidebar {
+	width: 30px;
+	background-color: #ccc;
+	padding: 5px;
+	border: 1px solid #000000;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	font-weight: bold;
+}
+
+#animalForm {
+	width: 300px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+
+#animalForm h2 {
+	margin-top: 0;
+}
+
+#animalForm label {
+	display: block;
+	margin: 10px 0 5px;
+}
+
+#animalForm input, #animalForm select, #animalForm textarea {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#animalForm button {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#animalForm button:hover {
+	background-color: #45a049;
+}
+/* General styling for the display area */
+#animalDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the cards */
+    padding: 20px;
+}
+
+/* Styling for individual animal cards */
+.animal-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Fixed width for the card */
+    padding: 20px;
+    
+    text-align: center;
+}
+
+/* Add hover effect for cards */
+.animal-card:hover {
+   
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Animal name styling */
+.animal-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Animal details */
+.animal-card p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Special styling for the animal description */
+.animal-card p:last-child {
+    font-style: italic;
+    color: #555;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .animal-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    #animalDisplay {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+}
