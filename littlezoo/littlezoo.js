@@ -12,6 +12,8 @@ const zooAnimals = [
   ];
   
   /* when HTML page is first loaded, show all animals */
+  let animals = JSON.parse(localStorage.getItem("zooAnimals"));
+
   displayAnimals(zooAnimals);
   
   /* functions */
@@ -21,16 +23,12 @@ const zooAnimals = [
 	  // YOUR CODE HERE
 	  // empty the display area first
 	  // loop through the "animals" array and add HTML elements for each animal
-	 
-		// Get the display area
 		const displayArea = document.getElementById('animalDisplay');
-		
-		// Empty the display area
+
 		displayArea.innerHTML = '';
 	
-		// Loop through the animals array and create elements for each animal
 		animals.forEach(animal => {
-			// Create a div for the animal card
+			
 			const animalCard = document.createElement('div');
 			animalCard.classList.add('animal-card');
 	
@@ -51,26 +49,27 @@ const zooAnimals = [
 			const animalDescription = document.createElement('p');
 			animalDescription.textContent = animal.description;
 			animalCard.appendChild(animalDescription);
-	
-			// Append the animal card to the display area
+			
+			
 			displayArea.appendChild(animalCard);
 		});
 	}
-  addAnimal
+  
   
   // add an animal with the given parameters to the zooAnimals array (don't forget to call the displayAnimals function to refresh the list)
   function addAnimal(name, age, gender, species, type, description) {
 	  // YOUR CODE HERE
 	  // create a new object and push it to the array
 	  // display all animals and reset filters
-	  const newAnimal ={
+		const newAnimal ={
 		name: name,
 		age: age,
 		gender: gender,
 		species: species,
 		type: type,
-		description,
-	  };
+		description: description,
+	  }; 
+	 
 	  zooAnimals.push(newAnimal)
 	  displayAnimals(zooAnimals)
   }
@@ -109,9 +108,44 @@ const zooAnimals = [
 	  ev.preventDefault();    // by naming the event parameter (ev) in the line above, we can access it and prevent the default behavior of a submit button, i.e. sending the form, from happening
 	  
 	  // YOUR CODE HERE
+	  	const animalName = document.querySelector("#name").value.trim();
+		const age = document.querySelector("#age").value.trim();
+		const parsedAge = parseInt(age,10);
+		const gender = document.querySelector("#gender").value.trim();
+		const species = document.querySelector("#species").value.trim();
+	  	const type = document.querySelector("#type").value.trim();
+	  	const description = document.querySelector("#description").value.trim();
+	  	try {
+
+			if (parsedAge <= 0|| isNaN(parsedAge)) {	
+				throw new RangeError("Invalid input(age): Must be a positive number");
+				
+					
+			}
+			if (isNaN(parsedAge)) {
+				throw new Error("Invalid input: Please enter a valid age.");
+				
+			}
+			addAnimal(animalName,parsedAge,gender,species,type,description)
+
+			animalForm.reset()
+		} catch (error) {
+		displayMessage(error.message,"error")
+
+		}
+		
   });
   
-  
+  const displayMessage = (message, type = "success") => {
+    const messageElement = document.querySelector("#message");
+    messageElement.textContent = message;
+    messageElement.className = type;
+    setTimeout(() => {
+        messageElement.textContent = "";
+        messageElement.className = "";
+    }, 3000);
+};
+
   // don't touch these - they show and hide the form to add a new animal
   document.querySelector("#toggleSidebar").addEventListener("click", function() {
 	  const sidebar = document.querySelector("#sidebar");
