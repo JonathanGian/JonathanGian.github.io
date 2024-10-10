@@ -1,0 +1,382 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Mate SC', sans-serif;
+    background-color: #0A192F;
+    color: #CCD6F6;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+    border-radius: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.social-icons a {
+    background-color: #112240;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover {
+    background-color: #64FFDA;
+}
+
+/* Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #112240;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-right: 20px;
+}
+
+.nav ul li a {
+    color: #64FFDA;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+/* Hero Banner */
+.hero-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    background: url('assets/PotentialBackground.avif') center/cover no-repeat;
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-banner h1, .hero-banner p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Projects */
+#projects {
+    background-color: #112240;
+    padding: 20px;
+    min-width: 90vw;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 20px;
+    min-width: 80vw;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    max-width: 90vw;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 1rem;
+    background: #112240;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 80vw;
+    padding: 0;
+}
+
+.card {
+    width: 300px;
+    background-color: #64FFDA;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(5px, -5px);
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+.card-content p {
+    color: black;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.card-content .card-btn {
+    padding: 6px 12px;
+    background-color: #112240;
+    color: #64FFDA;
+    border-radius: 4px;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.card-content .card-btn:hover {
+    color: white;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Skill Cards */
+.skill-card {
+    width: 250px;
+    background-color: #64FFDA;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 15px;
+    background-color: #4caf50;
+    transition: width 0.7s ease;
+}
+
+.skill-card:nth-child(1) .progress {
+    width: 50%;
+}
+
+.skill-card:nth-child(2) .progress {
+    width: 45%;
+}
+
+.skill-card:nth-child(3) .progress {
+    width: 70%;
+}
+
+#skills .card-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    min-width: 80vw;
+}
+
+/* Scrollable Content */
+main {
+    max-width: 100vw;
+    min-height: 75vh;
+    padding: 20px 0;
+    background-color: #112240;
+    overflow-y: auto;
+    border-radius: 5px;
+    color: #CCD6F6;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5vw;
+    text-align: center;
+    background-color: #112240;
+    color: #CCD6F6;
+}
+
+.form-wrap {
+    max-width: 600px;
+    width: 90%;
+    background: #112240;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#contactform {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+label {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+    color: #ccd6f6;
+}
+
+input, #message-input {
+    flex: 2;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccd6f6;
+    background-color: #0a192f;
+    color: #ccd6f6;
+}
+
+#message-input {
+    height: 5rem;
+}
+
+button {
+    background: lightgreen;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav, .section, .container, .card-container, .wrapper, .page-content, .form-wrap {
+        min-width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    #projects {
+        min-width: 100vw;
+        padding: 0;
+    }
+
+    .form-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card {
+        width: 100vw;
+        margin: 20px 0;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+      
