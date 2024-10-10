@@ -20,8 +20,10 @@ body {
     border: none;
     background: #fff;
     border-radius: 5px;
-display: flex;
-justify-content: center;
+display: inline-flex;
+flex-direction: row;
+flex-wrap: nowrap;
+
 }
 .searchBtn{
     background-color: orange;
@@ -33,11 +35,16 @@ justify-content: center;
     margin: 0px;
     width: 20%;
 }
+.searchBtn:hover{
+    background-color: rgb(164, 108, 3);
+}
 
 .searchbar{
     width: 100%;
     border-radius: 5px 0px 0px 5px;
     height: 50px;
+    width: 50vw;
+    
 }
 
 
@@ -82,16 +89,9 @@ section:nth-child(2){
 }
 
 h2 {
-    padding-left: 10px;
+    margin-left:10px;
 }
- /*  form{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    gap: 10px;
-    min-width: 500px;
-} */
+
 form div{
     display: flex;
     justify-content: space-between   ;
@@ -124,10 +124,7 @@ td, th {
     border-collapse: collapse;
     
   }
-/*   td:nth-child(even){
-    background-color: #d4d4d4;
-  }
-   */
+
   tr:nth-child(even) {
     background-color: #d4d4d4;
   }
@@ -188,8 +185,72 @@ footer {
     background-color: darkred;
 }
 
-@media  (max-width: 500px) {
-    .main-container{
-        flex-direction: column;
+
+    @media (max-width: 500px) {
+        body {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+    
+        .main-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        #searchbox {
+            flex-direction: column;
+            width: 90%;
+        }
+    
+        .searchBtn {
+            width: 100%;
+            padding: 10px;
+        }
+    
+        .searchbar {
+            width: 100%; 
+            margin-bottom: 10px;
+        }
+    
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        section {
+            margin: 10px;
+            padding: 15px;
+            width: 90%;
+        }
+    
+        button {
+            width: 80%;
+        }
+    
+        footer {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            padding: 20px;
+        }
+    
+        table {
+            font-size: 12px; 
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right:auto ;
+            margin-top: 2rem;
+        }
+    
+        td, th {
+            padding: 7px;
+            text-align: left;
+            word-break: break-all;
+        }
+        .delete-btn{
+            width: 20px;
+            padding: 5px;
+        }
     }
-  }
